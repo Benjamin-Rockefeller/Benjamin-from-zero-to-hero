@@ -1,0 +1,82 @@
+# Structurally Controlled Generative Systems for Multimodal Interaction
+
+A unified architecture for controlling, coordinating, and evaluating large language and multimodal models through structured feedback and planning.
+
+---
+
+## 📌 Overview
+This project presents a modular system for enhancing the controllability, coherence, and adaptability of generative models across text, image, and multimodal domains. It builds on the principles of *feedback-driven planning* and *structure-aware generation*, offering a reusable framework for NLP, AIGC, and multimodal LLM applications.
+
+> "We don’t just prompt models — we structure them to think, reflect, and revise."
+
+---
+
+## 🔧 System Architecture
+```
+                   +-----------------------------+
+                   |   Multimodal User Prompt    |
+                   +-------------+---------------+
+                                 |
+                          +------+------+
+                          |   SFPL Layer   |  ← System Feedback Planning Layer
+                          +------+------+
+                                 |
+      +------------------+-------+--------+------------------+
+      |                  |                |                  |
++-----v----+       +-----v-----+     +----v------+     +-----v-----+
+| NLP Core |       | Image Gen |     | Audio Gen |     | Planning   |
+| (REFLEX) |       | (Control) |     |  (TBD)    |     | Module     |
++----------+       +-----------+     +-----------+     +-----------+
+
+```
+
+---
+
+## 🧩 Submodules
+
+### 1. `nlp-core-reflex/`  
+Feedback-driven self-revision for text generation. Built upon REFLEX (Reflective Execution Layer) and SFPLEval metrics.
+
+**Key Features:**
+- Multi-step text rewriting with planner-critic loop
+- Supports summarization, factual correction, style transfer
+- Integrated structure evaluation: FTG, depth, coverage
+
+### 2. `image-feedback-generation/`  
+Structure-guided image generation module, compatible with ControlNet / DiT frameworks.
+
+**Key Features:**
+- Text → Layout → Image generation chain
+- Supports sketch control, multi-turn visual editing
+- Feedback loop for scene consistency and style control
+
+### 3. `sfpl-multimodal-planning/`  
+Feedback controller for coordinating modalities, guiding generation across text, image, and audio inputs.
+
+**Key Features:**
+- Task graph construction and modality routing
+- Feedback trajectory visualization and path evaluation
+- System prompt planning and agent integration (e.g. function calls)
+
+---
+
+## 📚 Potential Applications
+- Video script + scene generation
+- AI co-director for AIGC creative workflows
+- Feedback-aligned multimodal content planning
+- RLHF-style trajectory optimization for structure-coherent outputs
+
+---
+
+## 🧠 Publication Directions
+- **NLP Chain-of-Thought Feedback** → *EMNLP / ACL 2025*
+- **AIGC Structure-Aware Vision System** → *CVPR / ICCV 2025*
+- **Multimodal Planning Layer (SFPL)** → *NeurIPS / ICLR 2025*
+
+---
+
+## 🔗 License & Credits
+Open-source under MIT. Developed by Benjamin Rockefeller.
+
+For collaboration or publication, contact: `benjamin.rockefeller@ntu.edu.sg`
+
